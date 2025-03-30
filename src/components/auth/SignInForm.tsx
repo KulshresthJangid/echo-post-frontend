@@ -29,8 +29,8 @@ export default function SignInForm() {
 
       const data = await res.json();
       if (data.body?.token) {
-        localStorage.setItem("token", data.body.token);
-        router.push("/dashboard");
+        localStorage.setItem("ut", data.body.token);
+        router.push("/");
       } else {
         alert("Invalid Credentials");
       }
