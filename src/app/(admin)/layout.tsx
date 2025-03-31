@@ -22,7 +22,7 @@ export default function AdminLayout({
     ? "lg:ml-[290px]"
     : "lg:ml-[90px]";
 
-    const ut = localStorage?.getItem("ut");
+    const ut = global.localStorage?.getItem("ut");
 
     if(ut!=undefined) {
       return (

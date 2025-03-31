@@ -3,12 +3,14 @@ import Checkbox from "@/components/form/input/Checkbox";
 import Input from "@/components/form/input/InputField";
 import Label from "@/components/form/Label";
 import Button from "@/components/ui/button/Button";
+import { useUser } from "@/context/UserContext";
 import { ChevronLeftIcon, EyeCloseIcon, EyeIcon } from "@/icons";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
 export default function SignInForm() {
+  const { setUser } = useUser()
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -30,6 +32,7 @@ export default function SignInForm() {
       const data = await res.json();
       if (data.body?.token) {
         localStorage.setItem("ut", data.body.token);
+        setUser({username: data.body.username, email: data.body.email})
         router.push("/");
       } else {
         alert("Invalid Credentials");
