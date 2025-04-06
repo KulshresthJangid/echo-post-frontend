@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { useSidebar } from "../context/SidebarContext";
 import {
   BoxCubeIcon,
+  BuildIcon,
   CalenderIcon,
   ChevronDownIcon,
   GridIcon,
@@ -30,7 +31,12 @@ const navItems: NavItem[] = [
   {
     icon: <GridIcon />,
     name: "Dashboard",
-    subItems: [{ name: "Ecommerce", path: "/", pro: false }],
+    subItems: [{ name: "All", path: "/", pro: false }, { name: "Instagram", path: "/calendar", pro: false }],
+  },
+  {
+    name: "Integrations",
+    icon: <BuildIcon />,
+    path: "/integrations",
   },
   {
     icon: <CalenderIcon />,
@@ -44,22 +50,45 @@ const navItems: NavItem[] = [
   },
 
   {
-    name: "Forms",
+    name: "Create Post",
     icon: <ListIcon />,
     subItems: [{ name: "Form Elements", path: "/form-elements", pro: false }],
   },
   {
-    name: "Tables",
+    name: "Posts",
     icon: <TableIcon />,
     subItems: [{ name: "Basic Tables", path: "/basic-tables", pro: false }],
   },
   {
-    name: "Pages",
+    name: "Inbox",
     icon: <PageIcon />,
     subItems: [
       { name: "Blank Page", path: "/blank", pro: false },
       { name: "404 Error", path: "/error-404", pro: false },
     ],
+  },
+  {
+    name: "Team Management",
+    icon: <PageIcon />,
+    subItems: [
+      { name: "Blank Page", path: "/blank", pro: false },
+      { name: "404 Error", path: "/error-404", pro: false },
+    ],
+  },
+  {
+    name: "Settings",
+    icon: <TableIcon />,
+    subItems: [{ name: "Basic Tables", path: "/basic-tables", pro: false }],
+  },
+  {
+    name: "Upgrade / Billing",
+    icon: <TableIcon />,
+    subItems: [{ name: "Basic Tables", path: "/basic-tables", pro: false }],
+  },
+  {
+    name: "Help / Docs",
+    icon: <TableIcon />,
+    subItems: [{ name: "Basic Tables", path: "/basic-tables", pro: false }],
   },
 ];
 

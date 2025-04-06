@@ -1,4 +1,5 @@
 "use client";
+import { SMATClient } from "@/clients/HttpClient";
 import Checkbox from "@/components/form/input/Checkbox";
 import Input from "@/components/form/input/InputField";
 import Label from "@/components/form/Label";
@@ -21,7 +22,7 @@ export default function SignInForm() {
     e.preventDefault();
 
     try {
-      const res = await fetch("http://localhost:8080/auth/login", {
+      const res = await SMATClient.fetch("/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
